@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class="card bg-danger text-white mb-3">
+    <div class="card-body">
+        <h5 class="card-title">Listado de PQRS del Cliente</h5>
+        <div class="form-group">
+            <label for="cedula">Cédula:</label>
+            <input type="text" id="cedula" [(ngModel)]="cedula" name="cedula" class="form-control">
+            <button (click)="getCedula()" class="btn btn-light">Buscar</button>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-white">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Tipo PQRS</th>
+                        <th>Descripción de PQRS</th>
+                        <th>Solución de PQRS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pqrshistory of pqrshistorys">
+                        <td class="text-white">{{pqrshistory.id}}</td>
+                        <td class="text-white">{{pqrshistory.typePqrs}}</td>
+                        <td class="text-white">{{pqrshistory.descriptionProblem}}</td>
+                        <td class="text-white">{{pqrshistory.descriptionSolutionProblem}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</html>

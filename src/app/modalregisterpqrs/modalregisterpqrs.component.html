@@ -1,0 +1,50 @@
+<div class="modal-body text-white">
+
+  <form (ngSubmit)="formatHora(); submitForm()" class="form-container">
+
+    <div class="form-group">
+      <label for="field1">Tipo PQRS:</label>
+      <input type="text" id="field1" [(ngModel)]="typePqrs" name="field1" class="form-control" placeholder="Tipo PQRS">
+    </div>
+
+    <div class="form-group">
+      <label for="field2">Descripción del Problema:</label>
+      <textarea id="field2" [(ngModel)]="descriptionProblem" name="field2" class="form-control" rows="5"
+        placeholder="Descripción del Problema"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="field3">Solución del Problema:</label>
+      <textarea id="field3" [(ngModel)]="descriptionSolutionProblem" name="field3" class="form-control" rows="5"
+        placeholder="Solución del Problema"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="field4">Cédula:</label>
+      <input type="text" id="field4" [(ngModel)]="cedula" name="field4" class="form-control" placeholder="Cédula">
+    </div>
+
+    <div class="form-group">
+      <label for="field4">Usuario:</label>
+      <input type="text" id="field4" [(ngModel)]="usuario" name="field4" class="form-control" placeholder="Usuario">
+    </div>
+
+    <div class="form-group">
+      <label for="field4">Fecha:</label>
+      <input type="date" id="fecha" [(ngModel)]="registroPqrs" name="fecha" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="horaInicio">Hora de inicio:</label>
+      <input type="time" id="horaInicio" [(ngModel)]="horaInicio" name="horaInicio" class="form-control">
+    </div>
+    
+    <div class="form-group">
+      <label for="horaFin">Hora de finalización:</label>
+      <input type="time" id="horaFin" [(ngModel)]="horaFin" name="horaFin" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-danger" (click)="cerrarModal()">Enviar</button>
+
+  </form>
+</div>

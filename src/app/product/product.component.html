@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class="card bg-danger text-white mb-3">
+    <div class="card-body">
+        <h5 class="card-title">Listado de Productos del Cliente</h5>
+        <div class="form-group">
+            <label for="cedula">Cédula:</label>
+            <input type="text" id="cedula" [(ngModel)]="cedula" name="cedula" class="form-control">
+            <button (click)="getCedula()" class="btn btn-light">Buscar</button>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-white">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Tipo Producto</th>
+                        <th>Número Producto</th>
+                        <th>Sucursal</th>
+                        <th>Balance</th>
+                        <th>Cédula</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td class="text-white">{{product.id}}</td>
+                        <td class="text-white">{{product.typeProduct}}</td>
+                        <td class="text-white">{{product.numberProduct}}</td>
+                        <td class="text-white">{{product.branchProduct}}</td>
+                        <td class="text-white">{{product.balanceProduct}}</td>
+                        <td class="text-white">{{product.cedula}}</td>
+                        <td>
+                            <button type="button" id="pqrsButton" class="btn btn-light" (click)="abrirModal()">PQRS</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</html>

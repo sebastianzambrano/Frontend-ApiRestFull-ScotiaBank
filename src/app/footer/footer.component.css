@@ -1,0 +1,13 @@
+.footer {
+    padding: 0px; /* Ajusta el espaciado interior */
+}
+
+.footer a {
+    color: #fff; /* Cambia el color del enlace */
+    text-decoration: none; /* Quita el subrayado del enlace */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Subrayado en hover */
+}
+

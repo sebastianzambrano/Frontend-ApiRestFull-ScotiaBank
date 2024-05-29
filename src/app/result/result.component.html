@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de PQRS por usuario y fecha</title>
+    <!-- Agrega los enlaces a Bootstrap CSS y tus estilos personalizados aquí -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos personalizados aquí */
+    </style>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Primera fila: Listado de PQRS -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card bg-danger text-white mb-3">
+                    <div class="card-body">
+
+                        <h5 class="card-title">Listado de PQRS por usuario y fecha</h5>
+                        <div class="form-group">
+                            <label for="fecha">Fecha:</label>
+                            <input type="date" id="fecha" [(ngModel)]="fecha" name="fecha" class="form-control">
+                            <button (click)="getPqrsByDate()" class="btn btn-light">Enviar</button>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped text-white">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo PQRS</th>
+                                        <th>Usuario</th>
+                                        <th>Numero llamadas Atendidas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let result of results">
+                                        <td class="text-white">{{result.typePqrs}}</td>
+                                        <td class="text-white">{{result.usuario}}</td>
+                                        <td class="text-white">{{result.cantidadLlamadasAtendidas}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Segunda columna: Gráfica -->
+        <div class="col-md-6">
+            <div class="card">
+                <!-- Aquí colocas tu código para mostrar la gráfica -->
+                <ngx-charts-advanced-pie-chart [view]="view" scheme="cool" [results]="single" [gradient]="gradient"
+                    (select)="onSelect($event)" (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
+                </ngx-charts-advanced-pie-chart>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card bg-danger text-white mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Listado de PQRS por usuario, fecha y tiempo</h5>
+                        <div class="table-responsive">
+                            <button (click)="getPqrsByTime()" class="btn btn-light">Enviar</button>
+                            <table class="table table-bordered table-striped text-white">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo PQRS</th>
+                                        <th>Usuario</th>
+                                        <th>Promedio Tiempo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let result of resultsTime">
+                                        <td class="text-white">{{result.typePqrs}}</td>
+                                        <td class="text-white">{{result.usuario}}</td>
+                                        <td class="text-white">{{result.promedioTiempo}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--
+        <div class="col-md-6">
+            <div class="card">
+                <ngx-charts-advanced-pie-chart [view]="view" scheme="cool" [results]="singleTime" [gradient]="gradient"
+                    (select)="onSelect($event)" (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
+                </ngx-charts-advanced-pie-chart>
+            </div>
+        </div>
+-->
+    </div>
+
+
+    <!--  Agrega los enlaces a Bootstrap JS y tus scripts personalizados aquí -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

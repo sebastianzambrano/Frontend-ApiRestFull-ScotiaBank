@@ -1,0 +1,25 @@
+/* modal-form.component.css */
+.form-container {
+  padding: 20px; /* Aumenta el espacio alrededor del formulario dentro del modal */
+  width: 80%; /* Define el ancho del contenedor del formulario */
+  max-width: 800px; /* Establece el ancho máximo para evitar que el modal se vuelva demasiado grande en pantallas grandes */
+  margin: 0 auto; /* Centra el modal horizontalmente */
+}
+
+/* Ajusta el tamaño de los campos de entrada según sea necesario */
+input[type="text"],
+textarea {
+  width: 100%; /* Ajusta el ancho para que se extienda por completo dentro del contenedor del formulario */
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Ajusta el tamaño de los botones según sea necesario */
+button {
+  padding: 10px 20px;
+  margin-right: 10px; /* Agrega un espacio entre los botones */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Aumenta el espacio entre los grupos de formulario */
+}

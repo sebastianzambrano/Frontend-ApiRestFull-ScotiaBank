@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div class="card bg-danger text-white mb-3">
+    <div class="card-body">
+        <h5 class="card-title">Listado de Documentos</h5>
+
+        <div class="form-group">
+            <label for="category">Categoría:</label>
+            <select id="category" [(ngModel)]="category" name="category" class="form-control">
+                <option value="ahorro">Ahorro</option>
+                <option value="credito">Crédito</option>
+            </select>
+            <button (click)="getDocument()" class="btn btn-light">Buscar</button>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-white">
+                <thead>
+                    <tr>
+                        <th>Nombre Documento</th>
+                        <th>Categoría</th>
+                        <th>Documento</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let document of documents">
+                        <td class="text-white">{{document.name}}</td>
+                        <td class="text-white">{{document.category}}</td>
+                        <td class="text-white">{{document.document}}</td>
+                        <td>
+                            <button (click)="openDocumento(document.document)"
+                                class="btn btn-light">Abrir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</html>
